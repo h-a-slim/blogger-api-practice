@@ -1,14 +1,12 @@
 package org.slim.blog;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
-
 import java.util.List;
 
-public class BlogServiceMongoImpl implements BlogService {
+public class BlogServiceImpl implements BlogService {
 
-    private MongoRepository<Blog, String> repository;
+    private BlogRepository repository;
 
-    public BlogServiceMongoImpl(MongoRepository<Blog, String> repo) {
+    public BlogServiceImpl(BlogRepository repo) {
         this.repository = repo;
     }
 

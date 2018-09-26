@@ -1,4 +1,4 @@
-package org.slim.learning;
+package org.slim;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
