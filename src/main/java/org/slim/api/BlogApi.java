@@ -2,9 +2,10 @@ package org.slim.api;
 
 
 import org.slim.blog.Blog;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
+
+@RestController
 @RequestMapping(path = "/blog")
 public class BlogApi {
 
@@ -21,7 +22,7 @@ public class BlogApi {
     }
 
     @RequestMapping(path = "/{id}", method = RequestMethod.GET)
-    public String getBlogById(String id)
+    public String getBlogById(@PathVariable String id)
     {
         return "Hello there";
     }
