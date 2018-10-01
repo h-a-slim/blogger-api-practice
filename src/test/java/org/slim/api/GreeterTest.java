@@ -1,10 +1,11 @@
-package org.slim.learning.api;
+package org.slim.api;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runner.Runner;
+import org.mockito.Mock;
 import org.slim.blog.BlogRepository;
 import org.slim.blog.BlogService;
 import org.slim.blog.BlogServiceImpl;
@@ -26,7 +27,7 @@ public class GreeterTest {
 
     @Before
     public void setUp() throws Exception {
-        blogService.findAll();
+        //blogService.getAllBlogs();
     }
 
     @After

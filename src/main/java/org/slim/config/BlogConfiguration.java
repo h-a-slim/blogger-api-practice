@@ -1,4 +1,4 @@
-package org.slim.learning.config;
+package org.slim.config;
 
 import org.slim.blog.BlogRepository;
 import org.slim.blog.BlogService;

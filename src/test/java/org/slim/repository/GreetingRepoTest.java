@@ -1,4 +1,4 @@
-package org.slim.learning.repository;
+package org.slim.repository;
 
 
 import org.junit.Test;

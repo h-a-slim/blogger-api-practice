@@ -16,12 +16,14 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public List<Blog> findAll() {
+    public List<Blog> getAllBlogs() {
         return repository.findAll();
     }
 
     @Override
-    public Blog findById(Long id) {
-        return repository.findById(id.toString()).get();
+    public Blog getBlogById(Long id) {
+        return repository.findById(id.toString()).orElse(null);
     }
+
+
 }
