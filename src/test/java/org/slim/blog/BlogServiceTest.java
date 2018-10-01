@@ -5,10 +5,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.test.context.junit4.SpringRunner;
 
 
@@ -19,15 +21,24 @@ import static org.mockito.Mockito.when;
 @RunWith(SpringRunner.class)
 @SpringBootTest()
 public class BlogServiceTest {
+    @Configuration
+    public static class Config {
+        @MockBean
+        private BlogRepository blogRepository;
 
-    @MockBean
-    private BlogRepository blogRepository;
+        @Bean
+        public BlogService blogService()
+        {
+            BlogServiceImpl blogServiceMongo = new BlogServiceImpl(blogRepository);
+            return blogServiceMongo;
+        }
+    }
 
+    @Autowired
     private BlogService blogService;
 
     @Before
     public void setUp() throws Exception {
-        blogService = new BlogServiceImpl(blogRepository);
     }
 
     @After
