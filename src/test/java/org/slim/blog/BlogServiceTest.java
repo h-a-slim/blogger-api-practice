@@ -1,5 +1,6 @@
 package org.slim.blog;
 
+import org.hibernate.validator.constraints.URL;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,6 +14,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.test.context.junit4.SpringRunner;
 
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
@@ -39,6 +43,7 @@ public class BlogServiceTest {
 
     @Before
     public void setUp() throws Exception {
+
     }
 
     @After
